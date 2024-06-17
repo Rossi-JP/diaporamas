@@ -1,0 +1,50 @@
+/**.title {
+  font-size: 80px !important;
+  color: red !important;
+}
+.subtitle {
+  font-size: 80px;
+  color: red !important;
+}
+.quarto-title-author-name {
+  font-size: 80px;
+  color: blue !important;
+}
+.date {
+  font-size: 20px;
+  color: green !important;
+}
+**/
+
+.lettrine {
+  font-size: 3em;
+  float: left;
+  line-height: 0.8;
+  margin-right: 0.1em;
+}
+
+.p {
+  /*color: blue;*/
+  text-align: justify;
+  text-justify: inter-word;
+}
+
+.small-text {
+    font-size: 0.7em; /* Réduit la taille de la police */
+}
+
+.grand-text {
+    font-size: 1em; /* Réduit la taille de la police */
+}
+
+/**.bottom-right {
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    width: 100%;
+    text-align: right;
+    padding: 10px;
+    box-sizing: border-box;
+    font-size: 1em;
+    color: gray;
+}**/
