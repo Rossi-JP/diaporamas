@@ -1,0 +1,578 @@
+<!DOCTYPE html>
+<html lang="" xml:lang="">
+  <head>
+    <title>From macroecology to biosecurity through species distribution modeling</title>
+    <meta charset="utf-8" />
+    <meta name="author" content="Jean-Pierre Rossi" />
+    <script src="2023-IX-19-UFlorida_files/header-attrs-2.24/header-attrs.js"></script>
+    <link href="2023-IX-19-UFlorida_files/remark-css-0.0.1/hygge.css" rel="stylesheet" />
+    <link href="2023-IX-19-UFlorida_files/tile-view-0.2.6/tile-view.css" rel="stylesheet" />
+    <script src="2023-IX-19-UFlorida_files/tile-view-0.2.6/tile-view.js"></script>
+    <link href="2023-IX-19-UFlorida_files/panelset-0.2.6/panelset.css" rel="stylesheet" />
+    <script src="2023-IX-19-UFlorida_files/panelset-0.2.6/panelset.js"></script>
+    <script src="2023-IX-19-UFlorida_files/clipboard-2.0.6/clipboard.min.js"></script>
+    <link href="2023-IX-19-UFlorida_files/shareon-1.4.1/shareon.min.css" rel="stylesheet" />
+    <script src="2023-IX-19-UFlorida_files/shareon-1.4.1/shareon.min.js"></script>
+    <link href="2023-IX-19-UFlorida_files/xaringanExtra-shareagain-0.2.6/shareagain.css" rel="stylesheet" />
+    <script src="2023-IX-19-UFlorida_files/xaringanExtra-shareagain-0.2.6/shareagain.js"></script>
+    <link rel="stylesheet" href="xaringan-themer.css" type="text/css" />
+    <link rel="stylesheet" href="css/styleJPR.css" type="text/css" />
+  </head>
+  <body>
+    <textarea id="source">
+
+
+
+
+
+
+class: hide-count, full, hide_logo, center, top, inverse
+exclude: false
+.titrejp[From species distribution modeling to biosecurity]&lt;br&gt;&lt;br&gt;
+.bigjp[Jean-Pierre Rossi]&lt;br&gt;&lt;br&gt;
+.center[&lt;img src="im1/fig3d2.png" title="" alt="" width="400" /&gt;]
+.small60[2023, September 19th]
+
+<style>.panelset{--panel-tab-active-foreground: #0051BA;--panel-tab-hover-foreground: #d22;--panel-tab-font-family: Roboto;}</style>
+
+
+
+
+
+---
+class: hide_logo, inverse, left, middle
+exclude: false
+# 1) Introducing Species Distribution Models (SDMs)
+
+---
+exclude: false
+# SDM in a nutshell 
+.center[&lt;img src="im1/sdm/sdm1.png" title="" alt="" width="800"/&gt;]
+
+---
+exclude: false
+# SDM in a nutshell 
+.center[&lt;img src="im1/sdm/sdm2.png" title="" alt="" width="800"/&gt;]
+
+---
+exclude: false
+# SDM in a nutshell 
+.center[&lt;img src="im1/sdm/sdm3.png" title="" alt="" width="800"/&gt;]
+
+---
+exclude: false
+# SDM in a nutshell 
+.center[&lt;img src="im1/sdm/sdm4.png" title="" alt="" width="800"/&gt;]
+
+---
+exclude: false
+# SDM in a nutshell 
+.center[&lt;img src="im1/sdm/sdm5.png" title="" alt="" width="800"/&gt;]
+
+---
+exclude: false
+# SDM in a nutshell 
+.center[&lt;img src="im1/sdm/sdm6.png" title="" alt="" width="800"/&gt;]
+
+---
+class: hide_logo, inverse, left, middle
+exclude: false
+## Examples
+
+---
+exclude: false
+&lt;img class="logo" src="im1/Hv-nom.png" alt="logo" width="180"&gt;
+# SDM outputs: environemental suitability
+Index of suitability comprised between 0 and 1
+.center[&lt;img src="im1/Hv1.png" title="" alt="" width="900"/&gt;]
+.conteneur[Rossi &amp; Rasplus, 2023]
+
+---
+exclude: false
+&lt;img class="logo" src="im1/Hv-nom.png" alt="logo" width="180"&gt;
+# Reclassed environemental suitability
+Qualitative classes for better readability
+.center[&lt;img src="im1/Hv2.png" title="" alt="" width="900"/&gt;]
+.conteneur[Rossi &amp; Rasplus, 2023]
+
+---
+exclude: false
+&lt;img class="logo" src="im1/Hv-nom.png" alt="logo" width="180"&gt;
+# Projecting outside species native range
+Europe, current climate
+.center[&lt;img src="im1/Hv3.png" title="" alt="" width="450"/&gt;]
+.conteneur[Rossi &amp; Rasplus, 2023]
+
+---
+exclude: false
+&lt;img class="logo" src="im1/Hv-nom.png" alt="logo" width="180"&gt;
+# Projecting according to future climate conditions
+Europe, future conditions (2081–2100), ssp245
+.center[&lt;img src="im1/Hv4.png" title="" alt="" width="450"/&gt;]
+.conteneur[Rossi &amp; Rasplus, 2023]
+
+---
+exclude: false
+&lt;img class="logo" src="im1/Hv-nom.png" alt="logo" width="180"&gt;
+# Projecting according to future climate conditions
+Europe, future conditions (2081–2100), ssp245
+.center[&lt;img src="im1/Hv4.png" title="" alt="" width="450"/&gt;]
+.conteneur[Rossi &amp; Rasplus, 2023]
+.conteneur.center[.full-width[.content-box-green[Climate change increases the risk]]]
+
+---
+exclude: false
+&lt;img class="logo" src="im1/Ld-nom.png" alt="logo" width="180"&gt;
+# Response curves: understanding species-environment relationships
+The optimal range of the temperature (colder month) is between ca. -12 and -2 °C
+.center[&lt;img src="im1/Ld1.png" title="" alt="" width="500"/&gt;]
+.conteneur[Chartois et al in review]
+
+---
+exclude: false
+&lt;img class="logo" src="im1/Ld-nom.png" alt="logo" width="180"&gt;
+# Partial dependences to map limiting factors
+The species response to the variables can be mapped in the geographical space&lt;br&gt;
+Areas of high partial dependence `\(\rightarrow\)` areas where the variable is favourable
+.center[&lt;img src="im1/Ld2.png" title="" alt="" width="900"/&gt;]
+.conteneur[Chartois et al in review]
+
+---
+exclude: false
+# Data and data problems &amp;#128556;
+&lt;!-- Different types of data --&gt;
+- &lt;ins&gt;Presence data&lt;/ins&gt;: the species is present in the form of viable populations &lt;br&gt;&lt;br&gt;
+
+- &lt;ins&gt;Absence data&lt;/ins&gt;: the species is absent because it cannot maintain in the long term (true absences) &lt;br&gt;&lt;br&gt;
+
+- &lt;ins&gt;Pseudo-absences&lt;/ins&gt;: absence points generated in areas where the species is considered to be absent. **Assumption** : if the species is absent, it is due to environmental (climate) unsuitability not to dispersal contraints (beware of barriers) &lt;br&gt;&lt;br&gt;
+
+&lt;!-- - &lt;ins&gt;Background points&lt;/ins&gt; (only for maxent model) --&gt;
+
+
+---
+exclude: false
+&lt;img class="logo" src="im1/Ld-nom.png" alt="logo" width="180"&gt;
+# Data and data problems: pseudo-absences
+- We cannot generate pseudo-absences in the US because invasion is currently underway
+- We can can generate pseudo-absences at north and south of the native range which shape is well documented
+.center[&lt;img src="im1/Ld3.png" title="" alt="" width="900"/&gt;]
+.conteneur[Chartois et al in review]
+
+---
+exclude: false
+&lt;img class="logo" src="im1/Ld-nom.png" alt="logo" width="180"&gt;
+# Data and data problems: sampling bias
+Sampling bias occurs when data availability changes systematically in the geographical space &lt;br&gt;
+Native range often under-sampled while newly invaded areas often over-sampled&lt;br&gt;
+Solution: data thinning
+.center[&lt;img src="im1/Ld4.png" title="" alt="" width="600"/&gt;]
+.conteneur[Rossi unpublished]
+
+---
+exclude: false
+&lt;img class="logo" src="im1/Ld-nom.png" alt="logo" width="180"&gt;
+# Data and data problems: sampling bias
+Sampling bias occurs when data availability changes systematically in the geographical space &lt;br&gt;
+Native range often under-sampled while newly invaded areas often over-sampled&lt;br&gt;
+Solution: data thinning
+.center[&lt;img src="im1/Ld4.png" title="" alt="" width="600"/&gt;]
+.conteneur[Rossi unpublished]
+.conteneur.center[.full-width[.content-box-green[Always refine raw datasets]]]
+
+---
+exclude: false
+&lt;!-- &lt;img class="logo" src="im1/Ld-nom.png" alt="logo" width="180"&gt; --&gt;
+# The SDM ecosystem: so diverse !
+
+.pull-left[
+**Data type and volume determine the method**
+ .conteneur[Guisan et al 2017]
+- Presence/absence data: GLM, various regression tree methods,…
+- Presence but no absence:  profil methods
+- Presence, no absence + background points: Maxent
+ ]
+
+.pull-right[
+ .center[&lt;img src="im1/Guisan.png" title="" alt="" width="300"/&gt;]
+]
+
+
+---
+class: hide_logo, inverse, left, middle
+exclude: false
+# 2) Better understand invasions and improve biosecurity
+&lt;!-- biorisk --&gt;
+
+---
+exclude: false
+&lt;img class="logo" src="im1/Tp-nom.png" alt="logo" width="180"&gt;
+# Climate-based constraints and biotic interactions
+&lt;br&gt;
+.center[&lt;img src="im1/Tp1.png" title="" alt="" width="800"/&gt;]
+.conteneur[Rossi et al in prep]
+
+---
+exclude: false
+&lt;img class="logo" src="im1/Tp-nom.png" alt="logo" width="180"&gt;
+# Climate-based constraints and biotic interactions
+&lt;br&gt;
+.center[&lt;img src="im1/Tp2.png" title="" alt="" width="800"/&gt;]
+.conteneur[Rossi et al in prep]
+
+---
+exclude: false
+&lt;img class="logo" src="im1/Tp-nom.png" alt="logo" width="180"&gt;
+# Climate-based constraints and biotic interactions
+&lt;br&gt;
+.center[&lt;img src="im1/Tp4.png" title="" alt="" width="800"/&gt;]
+.conteneur[Rossi et al in prep]
+
+---
+exclude: false
+&lt;img class="logo" src="im1/Tp-nom.png" alt="logo" width="180"&gt;
+# Climate-based constraints and biotic interactions
+Biotic interactions should not be overlooked!
+.center[&lt;img src="im1/Tp5.png" title="" alt="" width="800"/&gt;]
+.conteneur[Rossi et al in prep]
+
+---
+exclude: false
+&lt;img class="logo" src="im1/Xf-nom.png" alt="logo" width="180"&gt;
+# Potential range can help design pre-emptive studies
+Knowing the geography of risk help being prepared in case of incursion
+.center[&lt;img src="im1/Xf1.png" title="" alt="" width="700"/&gt;]
+.conteneur[Godefroid et al 2019]
+
+---
+exclude: false
+&lt;img class="logo" src="im1/Wa-nom.png" alt="logo" width="180"&gt;
+# Population level matters
+- Origin: tropical south america
+- Invasion of Israel: cold and dry conditions
+.center[&lt;img src="im1/Wa1.png" title="" alt="" width="400"/&gt;]
+.conteneur[Rey et al 2012]
+
+---
+exclude: false
+&lt;img class="logo" src="im1/Wa-nom.png" alt="logo" width="180"&gt;
+# Population level matters
+- Origin: tropical south america
+- Invasion of Israel: cold and dry conditions
+.center[&lt;img src="im1/Wa1.png" title="" alt="" width="400"/&gt;]
+.conteneur[Rey et al 2012]
+.center[.content-box-green[Where did invader populations come from? How did they get pre-adapted?]]
+
+---
+exclude: false
+&lt;img class="logo" src="im1/Wa-nom.png" alt="logo" width="180"&gt;
+# Population level matters
+- Modeling the niche of the invasive population and projection onto the native range
+- Points toward the origin of the invaders (confirmed by genetic studies)
+.center[&lt;img src="im1/Wa2.png" title="" alt="" width="400"/&gt;]
+.conteneur[Rey et al 2012]
+
+---
+exclude: false
+&lt;img class="logo" src="im1/Wa-nom.png" alt="logo" width="180"&gt;
+# Population level matters
+- Modeling the niche of the invasive population and projection onto the native range
+- Points toward the origin of the invaders (confirmed by genetic studies)
+.center[&lt;img src="im1/Wa2.png" title="" alt="" width="400"/&gt;]
+.conteneur[Rey et al 2012]
+.center[.content-box-green[Pre-adaptation can occur at the margin of the native range]]
+
+---
+exclude: false
+&lt;img class="logo" src="im1/Dp-nom.png" alt="logo" width="180"&gt;
+# Infra-specific level matters too
+- Lineages have different potential ranges
+- The global model hides this level of detail potentially important for biosecurity
+.center[&lt;img src="im1/Dp1.png" title="" alt="" width="900"/&gt;]
+.conteneur[Godefroid et al 2016]
+
+---
+exclude: false
+&lt;img class="logo" src="im1/Xc-nom.png" alt="logo" width="180"&gt;
+# Infra-specific level matters too
+The "**crassiusculus affair**"
+
+--
+
+Urvois et al 2021: SDM at species level fails .titrejp[&amp;#128560;] 
+
+--
+
+Urvois et al 2023: genetic characterization of 2 genetic lineages .titrejp[&amp;#128512;]
+
+--
+
+Urvois et al in review: SDM at lineage level works! .titrejp[&amp;#128526;]
+
+--
+
+&lt;br&gt;
+.center[.content-box-green[Species level is not always the level at which we should work!]]
+
+&lt;!-- .center[&lt;img src="im1/Xc1.png" title="" alt="" width="600"/&gt;] --&gt;
+
+---
+exclude: false
+&lt;img class="logo" src="im1/Xc-nom.png" alt="logo" width="180"&gt;
+# Taxonomic level matters too
+Any divergence in climatic niches? yes
+
+Hellingers’ *I* = 0.310 (p &lt; 0.01, 1000 randomizations) ; niche comparison based on Warren et al. (2008)  
+
+.center[&lt;img src="im1/Xc2.png" title="" alt="" width="900"/&gt;]
+
+.conteneur[Urvois et al in review]
+
+---
+exclude: false
+&lt;img class="logo" src="im1/Xc-nom.png" alt="logo" width="180"&gt;
+# Taxonomic level matters too
+Potential distribution of lineage #1 (absent from Europe)
+.center[&lt;img src="im1/Xc3.png" title="" alt="" width="900"/&gt;]
+.conteneur[Urvois et al in review]
+
+---
+exclude: false
+&lt;img class="logo" src="im1/Xc-nom.png" alt="logo" width="180"&gt;
+# Taxonomic level matters too
+Potential distribution of lineage #2 (invader in Europe)
+.center[&lt;img src="im1/Xc4.png" title="" alt="" width="900"/&gt;]
+.conteneur[Urvois et al in review]
+
+---
+exclude: true
+&lt;img class="logo" src="im1/Xc-nom.png" alt="logo" width="180"&gt;
+# Taxonomic level matters too
+.small80[Europe is climatically suitable for both lineages but only lineage #2 is present&lt;br&gt;
+Hypothesis: climate change has improved suitability for lineage #2 but not #1 ? 
+- Projection of the model using past climate data
+- Climate have been favourable for both lineages since early 1900
+- Lineage 1 is absent from Europe by chance or for a question of propagule pressure rather than because of climate]
+.center[&lt;img src="im1/Xc5.png" title="" alt="" width="650"/&gt;]
+.conteneur[Urvois et al in review]
+
+---
+exclude: false
+&lt;img class="logo" src="im1/Xc-nom.png" alt="logo" width="180"&gt;
+# Predicting biorisks in the future (lineage #2)
+Current potential distribution
+.center[&lt;img src="im1/Xc6.png" title="" alt="" width="700"/&gt;]
+.conteneur[Urvois et al in review]
+
+---
+exclude: false
+&lt;img class="logo" src="im1/Xc-nom.png" alt="logo" width="180"&gt;
+ &lt;!-- 2041-2070#, SSP370 --&gt;
+# Predicting biorisks in the future (2041-2070)
+Range shrinking in the south, expansion in the north
+.center[&lt;img src="im1/Xc7.png" title="" alt="" width="700"/&gt;]
+.conteneur[Urvois et al in review]
+
+---
+exclude: false
+&lt;img class="logo" src="im1/Xc-nom.png" alt="logo" width="180"&gt;
+# Predicting biorisks in the future (2041-2070)
+Important commercial seaports will become climatically suitable
+.center[&lt;img src="im1/Xc8.png" title="" alt="" width="700"/&gt;]
+.conteneur[Urvois et al in review]
+
+---
+class: hide_logo, inverse, left, middle
+exclude: false
+# Conclusions
+
+---
+class: hide_logo, inverse, left, middle
+exclude: false
+
+Species distribution models are useful to
+  * Identify and map environmental drivers of species distribution
+  * Assess potential species range 
+  * Evaluate the effects of climate change (in absence of significant adaptation)
+  * Identify areas at risk and help managers to set up accurate surveillance plans
+
+.black[&amp;#9888;&amp;#65039; But species distribution models are not silver bullets
+  * They lack a proper account of species adaptation
+  * They are only as good as the data used to calibrate them (often poor)
+  * Huge and confusing literature with many papers of poor statistical quality]
+
+---
+class: hide_logo, inverse, left, middle
+exclude: false
+
+Species distribution models are useful to
+  * Identify and map environmental drivers of species distribution
+  * Assess potential species range 
+  * Evaluate the effects of climate change (in absence of significant adaptation)
+  * Identify areas at risk and help managers to set up accurate surveillance plans
+
+&amp;#9888;&amp;#65039; But species distribution models are not silver bullets
+  * They lack a proper account of species adaptation
+  * They are only as good as the data used to calibrate them (sometimes poor)
+  * Huge literature with many papers of poor statistical quality
+
+---
+class: hide_logo, inverse, left, middle
+exclude: false
+
+What do we need to use SDM?
+- As many occurrence points as possible
+- Absence data when possible
+- Information about infra-specific genetic structures if available
+
+Which target species?
+- Species representing a danger to forest health
+- Select a pool of american, asian and european bark beetles
+
+---
+class: hide_logo, left, middle
+exclude: false
+
+## References
+
+.small50[
+- Chartois, M., Fried, G. &amp; Rossi J-P (in review). Climatic suitability and host plant availability are favorable to the establishment of *Lycorma delicatula* in Europe. Agriocultural and Forest Entomology.
+
+- Guisan, A., Thuiller, W., Zimmermann, N.E. 2017. Habitat suitability and distribution models with applications in R, Ecology, biodiversity and conservation. Cambridge University Press.
+
+- Godefroid, M., Rasplus, J.-Y., Rossi, J.-P. 2016. Is phylogeography helpful for invasive species risk assessment? The case study of the bark beetle genus Dendroctonus. Ecography 39, 1197–1209. doi.org/10.1111/ecog.01474
+
+- Godefroid, M., Cruaud, A., Streito, J.-C., Rasplus, J.-Y., Rossi, J.-P. 2019. *Xylella fastidiosa*: climate suitability of European continent. Sci Rep 9, 8844. doi.org/10.1038/s41598-019-45365-y
+
+- Rey, O., Estoup, A., Vonshak, M., Loiseau, A., Blanchet, S., Calcaterra, L., Chifflet, L., Rossi, J.-P., Kergoat, G.J., Foucaud, J., Orivel, J., Leponce, M., Schultz, T., Facon, B. 2012. Where do adaptive shifts occur during invasion? A multidisciplinary approach to unravelling cold adaptation in a tropical ant species invading the Mediterranean area. Ecology Letters 15, 1266–1275. doi.org/10.1111/j.1461-0248.2012.01849.x
+
+- Rossi, J.-P. &amp; Rasplus, J.-Y., 2023. Climate change and the potential distribution of the glassy-winged sharpshooter (*Homalodisca vitripennis*), an insect vector of *Xylella fastidiosa*. Science of The Total Environment 860, 160375. doi.org/10.1016/j.scitotenv.2022.160375
+
+- Urvois, T., Auger-Rozenberg, M.A., Roques, A., Rossi, J.-P., Kerdelhue, C. 2021. Climate change impact on the potential geographical distribution of two invading *Xylosandrus* ambrosia beetles. Sci Rep 11, 1339. https://doi.org/10.1038/s41598-020-80157-9
+
+- Urvois T., Perrier C., Roques A., Sauné L., Courtin C., Kajimura H., Hulcr J., Cognato A., Auger-Rozenberg M.-A. &amp; Kerdelhué C. 2023. The worldwide invasion history of a pest ambrosia beetle inferred using population genomics. Molecular Ecology. dx.doi.org/10.1111/mec.16993
+
+- Urvois, T., Auger‑Rozenberg, M.A., Roques, A., Kerdelhué, C. &amp; Rossi J.-P. (in review). Intraspecific niche models for the invasive ambrosia beetle Xylosandrus crassiusculus suggest contrasted responses to climate change. Oecologia.
+
+- Warren, D.L., Glor, R.E. &amp; Turelli, M. 2008. Environmental niche equivalency versus conservatism: quantitative approaches to niche evolution. Evolution 62, 2868–2883. doi.org/10.1111/j.1558-5646.2008.00482.x
+
+]
+
+
+    </textarea>
+<style data-target="print-only">@media screen {.remark-slide-container{display:block;}.remark-slide-scaler{box-shadow:none;}}</style>
+<script src="remark-latest-min-js/remark-latest.min.js"></script>
+<script>var slideshow = remark.create({
+"ratio": "16:9"
+});
+if (window.HTMLWidgets) slideshow.on('afterShowSlide', function (slide) {
+  window.dispatchEvent(new Event('resize'));
+});
+(function(d) {
+  var s = d.createElement("style"), r = d.querySelector(".remark-slide-scaler");
+  if (!r) return;
+  s.type = "text/css"; s.innerHTML = "@page {size: " + r.style.width + " " + r.style.height +"; }";
+  d.head.appendChild(s);
+})(document);
+
+(function(d) {
+  var el = d.getElementsByClassName("remark-slides-area");
+  if (!el) return;
+  var slide, slides = slideshow.getSlides(), els = el[0].children;
+  for (var i = 1; i < slides.length; i++) {
+    slide = slides[i];
+    if (slide.properties.continued === "true" || slide.properties.count === "false") {
+      els[i - 1].className += ' has-continuation';
+    }
+  }
+  var s = d.createElement("style");
+  s.type = "text/css"; s.innerHTML = "@media print { .has-continuation { display: none; } }";
+  d.head.appendChild(s);
+})(document);
+// delete the temporary CSS (for displaying all slides initially) when the user
+// starts to view slides
+(function() {
+  var deleted = false;
+  slideshow.on('beforeShowSlide', function(slide) {
+    if (deleted) return;
+    var sheets = document.styleSheets, node;
+    for (var i = 0; i < sheets.length; i++) {
+      node = sheets[i].ownerNode;
+      if (node.dataset["target"] !== "print-only") continue;
+      node.parentNode.removeChild(node);
+    }
+    deleted = true;
+  });
+})();
+// add `data-at-shortcutkeys` attribute to <body> to resolve conflicts with JAWS
+// screen reader (see PR #262)
+(function(d) {
+  let res = {};
+  d.querySelectorAll('.remark-help-content table tr').forEach(tr => {
+    const t = tr.querySelector('td:nth-child(2)').innerText;
+    tr.querySelectorAll('td:first-child .key').forEach(key => {
+      const k = key.innerText;
+      if (/^[a-z]$/.test(k)) res[k] = t;  // must be a single letter (key)
+    });
+  });
+  d.body.setAttribute('data-at-shortcutkeys', JSON.stringify(res));
+})(document);
+(function() {
+  "use strict"
+  // Replace <script> tags in slides area to make them executable
+  var scripts = document.querySelectorAll(
+    '.remark-slides-area .remark-slide-container script'
+  );
+  if (!scripts.length) return;
+  for (var i = 0; i < scripts.length; i++) {
+    var s = document.createElement('script');
+    var code = document.createTextNode(scripts[i].textContent);
+    s.appendChild(code);
+    var scriptAttrs = scripts[i].attributes;
+    for (var j = 0; j < scriptAttrs.length; j++) {
+      s.setAttribute(scriptAttrs[j].name, scriptAttrs[j].value);
+    }
+    scripts[i].parentElement.replaceChild(s, scripts[i]);
+  }
+})();
+(function() {
+  var links = document.getElementsByTagName('a');
+  for (var i = 0; i < links.length; i++) {
+    if (/^(https?:)?\/\//.test(links[i].getAttribute('href'))) {
+      links[i].target = '_blank';
+    }
+  }
+})();</script>
+
+<script>
+slideshow._releaseMath = function(el) {
+  var i, text, code, codes = el.getElementsByTagName('code');
+  for (i = 0; i < codes.length;) {
+    code = codes[i];
+    if (code.parentNode.tagName !== 'PRE' && code.childElementCount === 0) {
+      text = code.textContent;
+      if (/^\\\((.|\s)+\\\)$/.test(text) || /^\\\[(.|\s)+\\\]$/.test(text) ||
+          /^\$\$(.|\s)+\$\$$/.test(text) ||
+          /^\\begin\{([^}]+)\}(.|\s)+\\end\{[^}]+\}$/.test(text)) {
+        code.outerHTML = code.innerHTML;  // remove <code></code>
+        continue;
+      }
+    }
+    i++;
+  }
+};
+slideshow._releaseMath(document);
+</script>
+<!-- dynamically load mathjax for compatibility with self-contained -->
+<script>
+(function () {
+  var script = document.createElement('script');
+  script.type = 'text/javascript';
+  script.src  = 'https://mathjax.rstudio.com/latest/MathJax.js?config=TeX-MML-AM_CHTML';
+  if (location.protocol !== 'file:' && /^https?:/.test(script.src))
+    script.src  = script.src.replace(/^https?:/, '');
+  document.getElementsByTagName('head')[0].appendChild(script);
+})();
+</script>
+  </body>
+</html>
